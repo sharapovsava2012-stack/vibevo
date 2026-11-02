@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#141a16" />
+    <script>
+      (() => {
+        let theme = window.location.pathname === "/" ? "light" : "dark";
+        try { if (localStorage.getItem("vidora-theme") === "light") theme = "light"; } catch {}
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+      })();
+    </script>
+    <meta name="description" content="VIDORA — кампании, контент и монетизация для креаторов и брендов." />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <title>VIDORA — личный кабинет</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
